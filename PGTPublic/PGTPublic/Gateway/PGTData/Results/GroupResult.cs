@@ -8,5 +8,8 @@ namespace PGTPublic.Gateway.PGTData.Results
     public class GroupResult
     {
         public int GroupID { get; set; }
+        public string GroupName { get; set; }
+        public string GroupCourse { get; set; }
+
     }
 }

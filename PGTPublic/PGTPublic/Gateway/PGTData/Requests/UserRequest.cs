@@ -7,7 +7,6 @@ namespace PGTPublic.Gateway.PGTData.Requests
 {
     public class UserRequest
     {
-        public int UserID { get; set; }
         public string UserName { get; set; }
         public int UserRegister { get; set; }
         public string UserEmail { get; set; }

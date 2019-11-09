@@ -20,5 +20,7 @@ namespace PGTPublic.Gateway.PGTData.Requests
 
         public int ReviewTypeID { get; set; }
 
+        public int UserID { get; set; }
+
     }
 }

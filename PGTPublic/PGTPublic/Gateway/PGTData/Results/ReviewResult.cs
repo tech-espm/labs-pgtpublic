@@ -21,6 +21,6 @@ namespace PGTPublic.Gateway.PGTData.Results
 
         public int ReviewTypeID { get; set; }
 
-        public List<CommentRequest> Comments { get; set; }
+        public int UserID { get; set; }
     }
 }

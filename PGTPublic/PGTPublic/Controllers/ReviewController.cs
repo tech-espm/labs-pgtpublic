@@ -36,6 +36,34 @@ namespace PGTPublic.Controllers
             }
         }
 
+        [HttpGet("Report")]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var entity = await _reviewClient.GetAll();
+                return new MyOkResult(entity);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResult(ex);
+            }
+        }
+
+        [HttpGet("Historic")]
+        public async Task<IActionResult> GetHistoric(string StartDate, string EndDate)
+        {
+            try
+            {
+                var entity = await _reviewClient.GetHistoric(StartDate, EndDate);
+                return new MyOkResult(entity);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResult(ex);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]ReviewRequest request)
         {

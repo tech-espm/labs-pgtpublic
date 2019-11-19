@@ -39,6 +39,42 @@ namespace PGTPublic.Gateway.PGTData
             }
         }
 
+        public async Task<List<ReviewResult>> GetAll()
+        {
+            try
+            {
+                WebClientOfT<List<ReviewResult>> client = new WebClientOfT<List<ReviewResult>>();
+
+                var result = await client.GetAsync(ApiEndPoint + "/Report");
+                return result;
+
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<HistoricResult>> GetHistoric(string StartDate, string EndDate)
+        {
+            try
+            {
+                WebClientOfT<List<HistoricResult>> client = new WebClientOfT<List<HistoricResult>>();
+
+                var URLQuery = ApiEndPoint + "/Historic?StartDate=" + StartDate + "&EndDate=" + EndDate;
+
+                var result = await client.GetAsync(URLQuery);
+
+                return result;
+
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public async Task<ReviewResult> Post(ReviewRequest request)
         {
             try

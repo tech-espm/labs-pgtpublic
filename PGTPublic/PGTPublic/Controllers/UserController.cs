@@ -16,18 +16,32 @@ namespace PGTPublic.Controllers
 
         private readonly UserClient _userClient;
 
-        public UserController(IUserClient groupClient)
+        public UserController(IUserClient userClient)
         {
-            _userClient = (UserClient)groupClient;
+            _userClient = (UserClient)userClient;
 
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get(string GroupID)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string UserID)
         {
             try
             {
-                var entity = await _userClient.Get(GroupID);
+                var entity = await _userClient.Get(UserID);
+                return new MyOkResult(entity);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResult(ex);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var entity = await _userClient.GetAll();
                 return new MyOkResult(entity);
             }
             catch (Exception ex)

@@ -39,6 +39,7 @@ namespace PGTPublic
             services.AddTransient<IUserClient, UserClient>();
             services.AddTransient<IReviewClient, ReviewClient>();
             services.AddTransient<IStudentClient, StudentClient>();
+            services.AddTransient<ICampusClient, CampusClient>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

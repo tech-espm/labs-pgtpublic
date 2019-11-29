@@ -10,7 +10,5 @@ namespace PGTPublic.Gateway.PGTData.Requests
         public string GroupName { get; set; }
         public string GroupCourse { get; set; }
         public int CampusID { get; set; }
-        public List<StudentRequest> Students { get; set; }
-        public List<UserRequest> Users { get; set; }
     }
 }

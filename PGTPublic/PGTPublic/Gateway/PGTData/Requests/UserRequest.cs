@@ -13,5 +13,6 @@ namespace PGTPublic.Gateway.PGTData.Requests
         public string UserPassword { get; set; }
         public int UserTypeID { get; set; }
         public int CampusID { get; set; }
+        public int GroupID { get; set; }
     }
 }

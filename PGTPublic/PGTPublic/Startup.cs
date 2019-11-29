@@ -36,6 +36,9 @@ namespace PGTPublic
             services.AddSingleton(instance => appSetting);
 
             services.AddTransient<IGroupClient, GroupClient>();
+            services.AddTransient<IUserClient, UserClient>();
+            services.AddTransient<IReviewClient, ReviewClient>();
+            services.AddTransient<IStudentClient, StudentClient>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

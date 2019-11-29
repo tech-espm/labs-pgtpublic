@@ -39,6 +39,22 @@ namespace PGTPublic.Gateway.PGTData
             }
         }
 
+        public async Task<List<StudentResult>> GetAll()
+        {
+            try
+            {
+                WebClientOfT<List<StudentResult>> client = new WebClientOfT<List<StudentResult>>();
+
+                var result = await client.GetAsync(ApiEndPoint);
+                return result;
+
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<StudentResult> Post(StudentRequest request)
         {
             try

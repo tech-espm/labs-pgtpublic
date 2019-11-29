@@ -39,6 +39,22 @@ namespace PGTPublic.Gateway.PGTData
             }
         }
 
+        public async Task<GroupResult> GetAll()
+        {
+            try
+            {
+                WebClientOfT<GroupResult> client = new WebClientOfT<GroupResult>();
+
+                var result = await client.GetAsync(ApiEndPoint);
+                return result;
+
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<GroupResult> Post(GroupRequest request)
         {
             try

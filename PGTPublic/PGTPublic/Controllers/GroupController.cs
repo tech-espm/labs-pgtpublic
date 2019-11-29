@@ -23,12 +23,26 @@ namespace PGTPublic.Controllers
 
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(string GroupID)
         {
             try
             {
                 var entity = await _groupClient.Get(GroupID);
+                return new MyOkResult(entity);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResult(ex);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var entity = await _groupClient.GetAll();
                 return new MyOkResult(entity);
             }
             catch (Exception ex)

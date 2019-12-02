@@ -29,7 +29,7 @@ namespace PGTPublic.Gateway.PGTData
             {
                 WebClientOfT<UserResult> client = new WebClientOfT<UserResult>();
 
-                var result = await client.GetByIdAsync(ApiEndPoint, UserID);
+                var result = await client.GetByIdAsync(ApiEndPoint + "/UserID", UserID);
                 return result;
 
             }
